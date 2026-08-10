@@ -39,6 +39,21 @@
   --mycelium-grey: #3a4540;
 }
 
+/* --- Announcement bar ---------------------------------------------------- */
+
+/* The banner sits on the near-black footer colour in both schemes, so the
+   default link colour (the deep-green accent) fails contrast against it. */
+.md-banner a,
+.md-banner a:hover,
+.md-banner a:focus {
+  color: #a8c9b8;
+}
+
+.md-banner a:hover,
+.md-banner a:focus {
+  text-decoration: underline;
+}
+
 /* --- Hero ---------------------------------------------------------------- */
 
 .hero-logo {
