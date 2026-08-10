@@ -1,0 +1,131 @@
+site_name: Mycelium
+site_description: 'Generative urban massing for Rhino and Grasshopper'
+site_url: https://mycelium-gh.netlify.app
+site_author: Patrick Kastner
+copyright: >-
+  Copyright &copy; 2026 Mycelium
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Download: download.md
+  - Gallery: gallery.md
+  - Documentation: "https://mycelium-gh-docs.netlify.app"
+  - Versions: versions.md
+  - 'FAQ': faq.md
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  logo: assets/cd/favicon.svg
+  favicon: assets/cd/favicon.svg
+  icon:
+    annotation: material/plus-circle
+  features:
+    - tabs
+    - instant
+    - navigation.tabs
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    - navigation.expand
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.path
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - announce.dismiss
+
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+
+markdown_extensions:
+  - md_in_html
+  - attr_list
+  - admonition
+  - meta
+  - def_list
+  - tables
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.magiclink:
+      social_url_shorthand: true   # @user -> https://github.com/user
+
+plugins:
+  - include-markdown:
+      preserve_includer_indent: true # important for download links to work
+  - section-index
+  - glightbox:
+      skip_classes:
+        - skip-lightbox
+  - git-revision-date-localized:
+      type: timeago
+      custom_format: "%d. %B %Y"
+      timezone: US/Eastern
+      locale: en
+      # Netlify build env doesn't support multiprocessing semaphores.
+      enable_parallel_processing: false
+      fallback_to_build_date: true
+      enable_creation_date: true
+      exclude:
+        - download.md
+        - index.md
+      enabled: true
+      strict: false
+  - tags
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+  - git-authors:
+      show_contribution: true
+      show_line_count: true
+      show_email_address: false
+      count_empty_lines: false
+      fallback_to_empty: true
+      sort_authors_by: name
+      authorship_threshold_percent: 1
+      exclude:
+        - download.md
+        - index.md
+      enabled: true
+      enabled_on_serve: false
+      strict: false
+  - search
+  - title-casing
