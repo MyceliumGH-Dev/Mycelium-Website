@@ -1,15 +1,39 @@
 name: ci
+
+# Publishes to both targets from one place:
+#   - Netlify (https://mycelium-gh.netlify.app) — the canonical URL
+#   - GitHub Pages (gh-pages) — mirror
+#
+# Netlify is deployed from here rather than through Netlify's own git integration: that
+# integration installs a repo deploy key, and `netlify init` gets 404 on
+# POST /repos/MyceliumGH-Dev/.../keys because the Netlify OAuth app is not approved for the
+# MyceliumGH-Dev org (GitHub answers 404 rather than 403 for unauthorized apps). Deploying
+# with a token sidesteps org OAuth policy entirely and keeps one build path.
+#
+# Secret required: NETLIFY_AUTH_TOKEN (Netlify user settings -> Applications -> Personal
+# access tokens). Without it the Netlify step is skipped and only the gh-pages mirror
+# updates — a missing secret must not fail the publish.
+
 on:
   push:
     branches:
       - main
       - master
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
 permissions:
   contents: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      NETLIFY_SITE_ID: ca274e65-6212-453c-9d21-3fdcb4866ee7
+      # A step's own env is not dependably readable from that step's `if`, so the
+      # secret-present test is hoisted to the job.
+      HAS_NETLIFY: ${{ secrets.NETLIFY_AUTH_TOKEN != '' }}
 
     steps:
       - uses: actions/checkout@v4
@@ -40,8 +64,28 @@ jobs:
           restore-keys: |
             mkdocs-material-
 
-      # No CNAME step: the live site is served from Netlify on a *.netlify.app
-      # subdomain. gh-pages is the redundant second build. When a custom domain is
-      # bought, write it to ./CNAME here and set it in the repo's Pages settings.
-      - name: Build & Deploy
+      - name: Build
+        run: mkdocs build --clean --strict
+
+      - name: Deploy to Netlify (production)
+        if: github.event_name != 'pull_request' && env.HAS_NETLIFY == 'true'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: npx --yes netlify-cli deploy --prod --no-build --dir=site --site "$NETLIFY_SITE_ID"
+
+      - name: Deploy to Netlify (preview)
+        if: github.event_name == 'pull_request' && env.HAS_NETLIFY == 'true'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: npx --yes netlify-cli deploy --no-build --dir=site --site "$NETLIFY_SITE_ID"
+
+      - name: Warn when the Netlify token is missing
+        if: env.HAS_NETLIFY != 'true'
+        run: echo "::warning::NETLIFY_AUTH_TOKEN is not set — skipped the Netlify deploy. Only the gh-pages mirror was updated."
+
+      # No CNAME step: the live site is served from Netlify on a *.netlify.app subdomain.
+      # When a custom domain is bought, write it to ./CNAME here and set it in the repo's
+      # Pages settings.
+      - name: Deploy to GitHub Pages (mirror)
+        if: github.event_name != 'pull_request'
         run: mkdocs gh-deploy --force

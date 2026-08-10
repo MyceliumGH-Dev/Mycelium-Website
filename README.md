@@ -8,8 +8,8 @@ with [MkDocs](https://www.mkdocs.org/) and
 
 | Target | URL | Trigger |
 | --- | --- | --- |
-| Netlify (primary) | https://mycelium-gh.netlify.app | push to `main` |
-| GitHub Pages (mirror) | https://myceliumgh-dev.github.io/Mycelium-Website/ | `deploy.yml` on push to `main` |
+| Netlify (primary) | https://mycelium-gh.netlify.app | `deploy.yml` on push to `main` |
+| GitHub Pages (mirror) | https://myceliumgh-dev.github.io/Mycelium-Website/ | same workflow, same push |
 
 Component documentation lives in a separate repository:
 [Mycelium-Docs](https://github.com/MyceliumGH-Dev/Mycelium-Docs).
