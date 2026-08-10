@@ -2,7 +2,6 @@
 hide:
   - navigation
   - toc
-title: Mycelium
 ---
 
 # Mycelium {.sr-only}
