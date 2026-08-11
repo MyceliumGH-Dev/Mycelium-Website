@@ -4,11 +4,11 @@ hide:
   - toc
 ---
 
-# Mycelium {.sr-only}
-
 <figure class="hero-logo" markdown="span">
   ![Mycelium](assets/cd/logo.svg){ width="180" .skip-lightbox .hero-logo__image }
 </figure>
+
+# Mycelium {.hero-title}
 
 <p class="hero-tagline">
   Generative urban massing for Rhino&nbsp;8 and Grasshopper
@@ -69,12 +69,6 @@ reproducible — the same seed and the same parameters always give you the same 
     case ID for every alternative.
 
 </div>
-
----
-
-## :gear:{ aria-hidden="true" } How It Works
-
-![Algorithm overview](assets/images/algorithm.jpeg){ loading=lazy }
 
 ---
 

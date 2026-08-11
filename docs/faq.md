@@ -1,5 +1,8 @@
 ---
 title: FAQ
+hide:
+  # Nav tree off, TOC kept — it is how you reach a section on a long Q&A page.
+  - navigation
 ---
 
 # FAQ

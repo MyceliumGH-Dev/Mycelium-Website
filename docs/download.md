@@ -23,14 +23,21 @@ source under [Apache 2.0](https://github.com/MyceliumGH-Dev/Mycelium/blob/dev/LI
 
 ## Current Version
 
-<!-- RELEASE COUPLING: bump this line and the table row on every plugin release. -->
+<!-- RELEASE COUPLING: check these entries on every plugin release. A definition list, not
+     a table: Markdown tables require a header row, and this is a key/value spec sheet with
+     no meaningful column names — `| | |` rendered as an empty first row. -->
 
-| | |
-| --- | --- |
-| **Latest stable** | [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fyak.rhino3d.com%2Fpackages%2FMycelium&query=%24.version&label=&color=29473a)](https://rhinopackages.github.io/?search=Mycelium) |
-| **Requires** | Rhino 8 |
-| **License** | Apache-2.0 |
-| **Package** | [`Mycelium` on the Rhino package server](https://rhinopackages.github.io/?search=Mycelium) |
+Latest stable
+:   [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fyak.rhino3d.com%2Fpackages%2FMycelium&query=%24.version&label=&color=29473a)](https://rhinopackages.github.io/?search=Mycelium)
+
+Requires
+:   Rhino 8
+
+License
+:   [Apache-2.0](https://github.com/MyceliumGH-Dev/Mycelium/blob/dev/LICENSE)
+
+Package
+:   [`Mycelium` on the Rhino package server](https://rhinopackages.github.io/?search=Mycelium)
 
 The badge reads the live version straight from `yak.rhino3d.com`, so it is current even
 if this page is not.

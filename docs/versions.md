@@ -1,5 +1,8 @@
 ---
 title: Versions
+hide:
+  # Nav tree off, TOC kept — it is the only practical way to jump between releases.
+  - navigation
 ---
 
 0.1.0.4 (Aug. 2, 2026)
