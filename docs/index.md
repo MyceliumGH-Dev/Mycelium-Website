@@ -76,16 +76,6 @@ reproducible — the same seed and the same parameters always give you the same 
 
 ![Algorithm overview](assets/images/algorithm.jpeg){ loading=lazy }
 
-<figure markdown="span">
-  ![Subdivision scheme](assets/images/scheme-1.png){ width="420" loading=lazy }
-  <figcaption>Recursive subdivision of the parcel into blocks and streets</figcaption>
-</figure>
-
-<figure markdown="span">
-  ![Typology scheme](assets/images/scheme-2.png){ width="420" loading=lazy }
-  <figcaption>Building typologies grown on each block</figcaption>
-</figure>
-
 ---
 
 ## :rocket:{ aria-hidden="true" } Quick Start

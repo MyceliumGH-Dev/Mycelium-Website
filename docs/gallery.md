@@ -54,16 +54,6 @@ output of one seed — change the seed, get a different city with the same rules
 ## Generation Scheme
 
 <figure markdown="span">
-  ![Subdivision scheme](assets/images/scheme-1.png){ width="600" loading=lazy }
-  <figcaption>Recursive binary space partitioning splits the parcel into blocks separated by streets</figcaption>
-</figure>
-
-<figure markdown="span">
-  ![Typology scheme](assets/images/scheme-2.png){ width="600" loading=lazy }
-  <figcaption>Each block receives a building typology drawn from the configurations you allow</figcaption>
-</figure>
-
-<figure markdown="span">
   ![Algorithm overview](assets/images/algorithm.jpeg){ loading=lazy }
   <figcaption>End-to-end algorithm: boundary in, massing and metrics out</figcaption>
 </figure>
