@@ -117,6 +117,27 @@
   color: #ffffff;
 }
 
+/* --- Card grids ---------------------------------------------------------- */
+
+/* Material lays `.grid.cards` out as auto-fit / minmax(16rem, 1fr), which lands on three
+   across at the landing page's width and leaves a fourth card stranded on its own row.
+   `cards--four` pins the count instead. Scoped to the modifier class so it cannot catch
+   card grids added elsewhere later. */
+
+@media screen and (min-width: 60em) {
+  .md-typeset .grid.cards--four {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 59.9375em) {
+  .md-typeset .grid.cards--four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Below 30em Material's own single-column rule applies unchanged. */
+
 /* --- Layout helpers ------------------------------------------------------ */
 
 .center-text {
