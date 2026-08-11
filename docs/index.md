@@ -14,7 +14,7 @@ hide:
   Generative urban massing for Rhino&nbsp;8 and Grasshopper
 </p>
 
-![Sample massing outputs](assets/images/samples.gif){.skip-lightbox}
+![Sample massing outputs](assets/images/samples.gif){ .skip-lightbox .center }
 
 <div align="center" markdown="1">
   [Get Started :material-arrow-right:](https://mycelium-gh-docs.netlify.app){ .md-button .md-button--primary aria-label="Get started with the Mycelium documentation" }
@@ -35,7 +35,7 @@ Mycelium takes a **closed parcel boundary curve** and generates complete urban m
 alternatives. Every output is driven by a random seed, so alternatives are fully
 reproducible — the same seed and the same parameters always give you the same city.
 
-<div class="grid cards" markdown>
+<div class="grid cards cards--four" markdown>
 
 -   __:material-grid: Subdivision__
 
