@@ -72,23 +72,16 @@ reproducible — the same seed and the same parameters always give you the same 
 
 ---
 
-## :rocket:{ aria-hidden="true" } Quick Start
+## :rocket:{ aria-hidden="true" } Get Started
 
-1. Install Mycelium through the Rhino&nbsp;8 Package Manager (`_PackageManager` → search
-   **mycelium**) and restart Rhino. See the [download page](download.md) for details.
-2. Open Grasshopper and find the components under the **Mycelium** tab.
-3. Drop a **Mycelium Templates** component on the canvas and click **Select Template** —
-   it lists every example definition from the
-   [Mycelium-Templates](https://github.com/MyceliumGH-Dev/Mycelium-Templates) repository,
-   synced from the branch matching your installed plugin version.
-4. Click a template to insert a working example graph next to the component.
+Install from the Rhino&nbsp;8 Package Manager, then open a template — the **Mycelium
+Templates** component pulls working example definitions matching your installed version,
+so the first thing you see is a graph that already runs.
 
-!!! tip "Reproducible by design"
-
-    Every generated alternative carries a `CaseManifest` output: schema-versioned JSON
-    with a deterministic case ID, the effective parameters, the random seed, the plugin
-    version, and the model units. Stream it to disk alongside your geometry and the run
-    stays reproducible years later.
+<div align="center" markdown="1">
+  [Download :material-download:](download.md){ .md-button .md-button--primary aria-label="Download Mycelium" }
+  [First Steps :material-arrow-right:](https://mycelium-gh-docs.netlify.app/first_steps/){ .md-button aria-label="Read the first steps guide" }
+</div>
 
 ---
 
@@ -120,6 +113,20 @@ reproducible — the same seed and the same parameters always give you the same 
 
 ## :books:{ aria-hidden="true" } Citation
 
-Mycelium is archived on Zenodo with a versioned DOI from release `0.1.0.4` onward. Use
-the repository's **Cite this repository** menu — it is populated from
-[`CITATION.cff`](https://github.com/MyceliumGH-Dev/Mycelium/blob/dev/CITATION.cff).
+If you use Mycelium in research, please cite the software release:
+
+```bibtex
+@software{karadag_mycelium,
+  author  = {Karadag, Ilker and Kastner, Patrick},
+  title   = {{Mycelium: Procedural Urban Morphology Generation for Rhino and Grasshopper}},
+  year    = {2026},
+  version = {0.1.0.4},
+  license = {Apache-2.0},
+  url     = {https://github.com/MyceliumGH-Dev/Mycelium}
+}
+```
+
+Releases from `0.1.0.4` onward are archived on Zenodo with a versioned DOI. GitHub also
+generates an up-to-date APA or BibTeX string from the repository's
+[`CITATION.cff`](https://github.com/MyceliumGH-Dev/Mycelium/blob/dev/CITATION.cff) — open
+the repo and use **Cite this repository** in the right-hand sidebar.
