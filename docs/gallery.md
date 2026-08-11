@@ -1,6 +1,9 @@
 ---
 title: Gallery
 hide:
+  # Five top-level pages; the tab bar already covers getting between them, so the nav tree
+  # is redundant on a content page.
+  - navigation
   - toc
 ---
 
@@ -51,12 +54,10 @@ output of one seed — change the seed, get a different city with the same rules
 
 ---
 
-## Generation Scheme
+!!! info "How it works"
 
-<figure markdown="span">
-  ![Algorithm overview](assets/images/algorithm.jpeg){ loading=lazy }
-  <figcaption>End-to-end algorithm: boundary in, massing and metrics out</figcaption>
-</figure>
+    The generation algorithm — subdivision, typologies, open space, metrics — is covered in
+    the [documentation](https://mycelium-gh-docs.netlify.app).
 
 ---
 
