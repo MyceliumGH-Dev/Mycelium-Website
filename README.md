@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/cd/logo.png" alt="Mycelium logo" width="140"/>
+</p>
+
 # Mycelium-Website
 
 Marketing/landing site for [Mycelium](https://github.com/MyceliumGH-Dev/Mycelium), built
