@@ -115,6 +115,8 @@ so the first thing you see is a graph that already runs.
 
 If you use Mycelium in research, please cite the software release:
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21764053.svg)](https://doi.org/10.5281/zenodo.21764053)
+
 ```bibtex
 @software{karadag_mycelium,
   author  = {Karadag, Ilker and Kastner, Patrick},
